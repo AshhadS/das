@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery.fullpage.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+	<script src="js/jquery.fullpage.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['help', 'why', 'who', 'what', 'how', 'contact'],
+				menu: '#menu',
+				sectionsColor: ['#000', '#fff', '#fff', '#fff', '#fff']
+			});
+		});
+	</script>
+</head>
+<body>
+	<ul id="menu" class="site-menu">
+	    <!-- <li class="logo"><a href="#help"><img src="img/logo.jpg" alt=""></a></li> -->
+	    <li data-menuanchor="help"><a href="#help">Help</a></li>
+	    <li data-menuanchor="why"><a href="#why">Why</a></li>
+	    <li data-menuanchor="who"><a href="#who">Who</a></li>
+	    <li data-menuanchor="what"><a href="#what">What</a></li>
+	    <li data-menuanchor="how"><a href="#how">How</a></li>
+	    <li class="no-seperator" data-menuanchor="contact"><a href="#contact">Contact</a></li>
+	    <!-- <li class="donate no-seperator" ><a href="/donate">Donate</a></li> -->
+	</ul>
+	<div id="fullpage">
+		<div class="section hero" id="help">
+			<div class="container">
+				<div class="content">
+					<div class="row">
+						<div class="col-md-6">
+							<h1>Help the ones in need</h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente optio recusandae, totam distinctio expedita laborum maiores odit fugiat! Cum assumenda cumque incidunt, a aliquid corrupti odit reprehenderit dolor nihil dolore!</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="section" id="why">
+			<div class="container">
+				<h1>Why</h1>
+				
+			</div>
+		</div>
+		<div class="section" id="who">
+			<div class="container">
+				<h1>Who</h1>
+				
+			</div>
+		</div>
+		<div class="section" id="what">
+			<div class="container">
+				<h1>What</h1>
+				
+			</div>
+		</div>
+		<div class="section" id="how">
+			<div class="container">
+				<h1>How</h1>
+				
+			</div>
+		</div>
+		<div class="section" id="contact">
+			<div class="container">
+				<h1>Contact</h1>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "das",
+  "version": "1.0.0",
+  "description": "das website",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "bourbon-neat": "^1.9.0",
+    "gulp": "^3.9.1",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^2.0.0-beta.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

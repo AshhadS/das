@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery.fullpage.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+	<script src="js/jquery.fullpage.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				// sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+				anchors: ['help', 'why', 'who', 'what', 'how', 'contact'],
+				menu: '#menu',
+
+				afterLoad: function( anchorLink, index){
+					if(index == 1){
+						$('.logo').removeClass('show');
+					}else{
+						$('.logo').addClass('show');
+
+					}
+				},
+			});
+
+			$('.move-bg').mousemove(function(e){
+				var x = -(e.pageX + this.offsetLeft) / 10;
+				var y = -(e.pageY + this.offsetTop) / 10;
+				$(this).css('background-position', x + 'px ' + y + 'px');
+			});
+
+			$('.toggle-menu').on('click', function(){
+				$('#menu').toggleClass('menu-collapse');
+			});
+
+			$('#menu li a').on('click', function(){
+				$('#menu').removeClass('menu-collapse');
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div class="header site-menu">
+	    <span class="logo no-seperator"><a href="/"><img src="img/logo.jpg" alt=""></a></span>
+		
+		<ul id="menu">	    	
+		    <li class="help" data-menuanchor="help"><a href="#help">Help </a>
+		    </li>
+		    <li data-menuanchor="why"><a href="#why">Why</a></li>
+		    <li data-menuanchor="who"><a href="#who">Who</a></li>
+		    <li data-menuanchor="what"><a href="#what">What</a></li>
+		    <li data-menuanchor="how"><a href="#how">How</a></li>
+		    <li class="no-seperator" data-menuanchor="contact"><a href="#contact">Contact</a></li>
+		    <li class="donate no-seperator" ><a href="/donate">Donate</a></li>
+			<span class="toggle-menu hide-mobile"><span></span><span></span></span>		    	
+		</ul>
+	</div>
+	
+
+<div id="fullpage">
+    <div class="section hero">
+       <div class="container">
+			<div class="content">
+				<div class="row">
+					<div class="col-md-6">
+						<h2 class="title noalign">Help the ones in need</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente optio recusandae, totam distinctio expedita laborum maiores odit fugiat! Cum assumenda cumque incidunt, a aliquid corrupti odit reprehenderit dolor nihil dolore!</p>
+					</div>
+				</div>
+			</div>				
+		</div>
+    </div>
+    <div class="section why noalign">
+		<div class="container">
+			<div class="content">
+				<h2 class="title">Why you should donate</h2>
+				<div class="row">
+					<div class="col-md-4 col-md-offset-1">
+						<img src="img/section_why.jpg" alt="">
+					</div>
+					<div class="col-md-6 col-md-offset-1">
+						<h3>Lorem ipsum dolor</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente optio recusandae, totam distinctio expedita laborum maiores odit fugiat! Cum assumenda cumque incidunt, a aliquid corrupti odit reprehenderit dolor nihil dolore!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+    <div class="section move-bg">
+       <div class="container">
+						
+		</div>
+    </div>
+    <div class="section">
+       <div class="container">
+			<div class="content">
+				<div class="row">
+					<div class="col-md-6">
+						<h2>Help the ones in need</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente optio recusandae, totam distinctio expedita laborum maiores odit fugiat! Cum assumenda cumque incidunt, a aliquid corrupti odit reprehenderit dolor nihil dolore!</p>
+					</div>
+				</div>
+			</div>				
+		</div>
+    </div>
+    <div class="section">
+       <div class="container">
+			<div class="content">
+				<div class="row">
+					<div class="col-md-6">
+						<h2>Help the ones in need</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente optio recusandae, totam distinctio expedita laborum maiores odit fugiat! Cum assumenda cumque incidunt, a aliquid corrupti odit reprehenderit dolor nihil dolore!</p>
+					</div>
+				</div>
+			</div>				
+		</div>
+    </div>
+    <div class="section">
+       <div class="container">
+			<div class="content">
+				<div class="row">
+					<div class="col-md-6">
+						<h2>Help the ones in need</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente optio recusandae, totam distinctio expedita laborum maiores odit fugiat! Cum assumenda cumque incidunt, a aliquid corrupti odit reprehenderit dolor nihil dolore!</p>
+					</div>
+				</div>
+			</div>				
+		</div>
+    </div>
+</div>
+</body>
+</html>

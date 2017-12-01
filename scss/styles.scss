@@ -1,0 +1,327 @@
+@import "neat";
+$neat-grid: (
+  gutter: 20px,
+  
+);
+$nomargin-grid: (
+  gutter: 0,
+);
+
+
+$mobile-small: (
+  media: 480px,
+);
+
+$mobile: (
+  media: 768px,
+);
+
+$tab: (
+  media: 992px,
+);
+
+$desktop: (
+  media: 768px,
+);
+
+html{
+	font-family: sans-serif;
+	font-size: 100%;
+    line-height: 1.5em;
+    box-sizing: border-box;
+}
+
+img {
+	max-width: 100%; 
+}
+
+a,
+a:hover,
+a:active,
+a:focus{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+}
+
+.hero{
+	background: black;
+	color: white;
+
+  p{
+    color: white;
+
+  }
+}
+
+
+
+/*Menu*/
+.site-menu {
+  /*position: fixed;*/    
+  color: black;
+  padding: 0;
+
+  .logo{
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    transition: all .25s cubic-bezier(.55, 0, .1, 1);
+    left: -100px;
+
+    @include grid-media($mobile){
+      left: 0;
+
+    }
+
+    &.show{
+      top: 100px;
+    }
+  }
+
+  #menu{
+    position: fixed;
+    z-index: 1;
+    background: white;
+    @include grid-column(12, $nomargin-grid);
+    margin-left: 0;
+    height: 44px;
+    transition: all .25s cubic-bezier(.55, 0, .1, 1);
+  
+    > li{
+      display: none;
+
+      &.active{
+        display: block;
+      }
+
+      @include grid-media($mobile){
+        display: block;
+      }
+    }
+
+    
+    .help{
+      position: relative;
+    }
+
+    .toggle-menu{
+      cursor: pointer;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      width: 100%;
+      background: #f3ef42;
+      bottom: -18px;
+      text-align: center;
+
+      > span{
+        display: block;
+        width: 15px;
+        height: 5px;
+        background: #00a651;
+        transition: all .25s cubic-bezier(.55, 0, .1, 1);
+        position: relative;
+        border-radius: 45%;
+        display: inline-block;
+        
+
+        &:nth-child(1){
+          transform: rotate(130deg);
+          top: 0px;
+          left: 26px;
+          transition: all .25s cubic-bezier(.55, 0, .1, 1);
+        }
+          
+        &:nth-child(2){
+          transform: rotate(-130deg);
+        }
+      }
+    }
+
+
+    &.menu-collapse{
+      height: 312px;
+
+      > li{
+        display: block;
+      }
+
+      .toggle-menu > span:nth-child(1){
+          left: 10px;
+      }
+    }
+
+
+    @include grid-media($mobile){
+      width: auto;
+      float: none;
+      top: 98px;
+      height: auto;
+    }
+  }
+
+   ul{
+    padding: 0;
+    margin: 0;
+
+  }
+
+  li{
+    list-style: none;
+    padding: 0.75rem 0.5rem ;
+    text-align: center;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      background: black;
+      bottom: 0;
+      left: 35px;
+      right: 35px;
+      height: 1px;
+    }
+
+    &.no-seperator:after {
+      content: none;
+    }
+
+    &.donate {
+        background: #00a651;
+
+        a{
+          color: white;
+        }
+    }
+
+  }
+
+  a{
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.25em;
+    position: relative;
+    transition: all 5s cubic-bezier(.55, 0, .1, 1);
+
+    &:after {
+      width: 0;
+      border-bottom: 0.125em solid #00a651;
+      content: "";
+      left: 0;
+      margin-top: calc(0.125em / 2 * -1);
+      position: absolute;
+      top: 50%;
+      transition: all .5s cubic-bezier(.55, 0, .1, 1);
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+  }
+
+  .active a{
+    position: relative;
+
+    &:after {
+      border-bottom: 0.125em solid #00a651;
+      content: "";
+      left: 0;
+      margin-top: calc(0.125em / 2 * -1);
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transition: all .5s cubic-bezier(.55, 0, .1, 1);
+    }
+  }
+}
+
+.logo img {
+    max-width: 97.5px;
+    margin: 0;
+	
+}
+
+/* Strike Through */
+.strikeout {
+  position: relative;
+}
+
+.strikeout::after {
+  border-bottom: 0.125em solid red;
+  content: "";
+  left: 0;
+  margin-top: calc(0.125em / 2 * -1);
+  position: absolute;
+  right: 0;
+  top: 50%;
+}
+
+.section.why .content{
+	margin-top: 5rem;
+
+ & > h2{
+    margin-bottom: 5rem;
+  }
+}
+
+h2.title{
+	color: #00a651;
+	text-align: center;
+  font-size: 4rem;
+
+  &.noalign{
+  	text-align: left;
+  }
+}
+
+
+.move-bg{
+	background: url('../img/section2_bg.JPG');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-size: 125% 125%;
+}
+
+/*Overeides*/
+.noalign .fp-tableCell {
+     display: block; 
+     vertical-align: initial; 
+}
+
+#fullpage{
+	    /*margin-left: 100px;*/
+}
+
+/* Helpers */
+.hide{
+  display: none;
+}
+.show{
+  display: block;
+}
+.show-mobile{
+    display: none;
+
+    @include grid-media($mobile){
+      display: block;
+    }
+}
+
+.hide-mobile{
+    display: block;
+
+    @include grid-media($mobile){
+      display: none;
+    }
+}
