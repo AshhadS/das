@@ -1,11 +1,37 @@
+/**
+* Lato Regular
+**/
+@font-face {
+  font-family: 'Latoregular';
+  src: url("../../../fonts/lato-regular-webfont.eot");
+  src: url("../../../fonts/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/lato-regular-webfont.woff2") format("woff2"), url("../../../fonts/lato-regular-webfont.woff") format("woff"), url("../../../fonts/lato-regular-webfont.svg#latoregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Latoblack';
+  src: url("../../../fonts/lato-black-webfont.eot");
+  src: url("../../../fonts/lato-black-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/lato-black-webfont.woff2") format("woff2"), url("../../../fonts/lato-black-webfont.woff") format("woff"), url("../../../fonts/lato-black-webfont.svg#latoblack") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/**
+	Variables
+**/
 html {
-  font-family: sans-serif;
+  font-family: "Latoregular", sans-serif;
   font-size: 100%;
   line-height: 1.5em;
   box-sizing: border-box; }
 
 img {
   max-width: 100%; }
+
+p {
+  font-family: "Latoregular", sans-serif; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Latoblack", sans-serif; }
 
 a,
 a:hover,
@@ -26,7 +52,8 @@ li {
   background: black;
   color: white; }
   .hero p {
-    color: white; }
+    color: white;
+    font-family: "Latoregular", sans-serif; }
 
 /*Menu*/
 .site-menu {
@@ -41,7 +68,7 @@ li {
     left: -100px; }
     @media only screen and (min-width: 768px) {
       .site-menu .logo {
-        left: 0; } }
+        left: -2.1px; } }
     .site-menu .logo.show {
       top: 100px; }
   .site-menu #menu {
@@ -125,10 +152,10 @@ li {
   .site-menu a {
     color: black;
     text-transform: uppercase;
-    font-weight: bold;
     font-size: 1.25em;
     position: relative;
-    transition: all 5s cubic-bezier(0.55, 0, 0.1, 1); }
+    transition: all 5s cubic-bezier(0.55, 0, 0.1, 1);
+    font-family: "Latoblack", sans-serif; }
     .site-menu a:after {
       width: 0;
       border-bottom: 0.125em solid #00a651;
