@@ -80,7 +80,7 @@ li{
   }
 
   #menu{
-    position: fixed;
+    position: relative;
     z-index: 1;
     background: white;
     @include grid-column(12, $nomargin-grid);
@@ -96,6 +96,7 @@ li{
       }
 
       @include grid-media($mobile){
+    position: fixed;
         display: block;
       }
     }
@@ -112,7 +113,7 @@ li{
       height: 20px;
       width: 100%;
       background: #f3ef42;
-      top: 40px;
+      bottom: -17px;
       text-align: center;
 
       > span{

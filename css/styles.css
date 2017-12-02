@@ -73,7 +73,7 @@ li {
     .site-menu .logo.show {
       top: 100px; }
   .site-menu #menu {
-    position: fixed;
+    position: relative;
     z-index: 1;
     background: white;
     width: calc(100%);
@@ -88,6 +88,7 @@ li {
         display: block; }
       @media only screen and (min-width: 768px) {
         .site-menu #menu > li {
+          position: fixed;
           display: block; } }
     .site-menu #menu .help {
       position: relative; }
@@ -98,7 +99,7 @@ li {
       height: 20px;
       width: 100%;
       background: #f3ef42;
-      top: 40px;
+      bottom: -17px;
       text-align: center; }
       .site-menu #menu .toggle-menu > span {
         display: block;
