@@ -96,7 +96,7 @@ li{
       }
 
       @include grid-media($mobile){
-    position: fixed;
+        position: fixed;
         display: block;
       }
     }
@@ -148,9 +148,13 @@ li{
         display: block;
       }
 
-      .toggle-menu > span:nth-child(1){
-          left: 7px;
-      }
+      .toggle-menu {
+        bottom: -50px;
+        
+        & > span:nth-child(1){
+                left: 7px;
+            }
+          }
     }
 
 
