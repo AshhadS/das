@@ -112,7 +112,7 @@ li{
       height: 20px;
       width: 100%;
       background: #f3ef42;
-      bottom: -18px;
+      top: 40px;
       text-align: center;
 
       > span{
@@ -129,7 +129,7 @@ li{
         &:nth-child(1){
           transform: rotate(130deg);
           top: 0px;
-          left: 26px;
+          left: 24px;
           transition: all .25s cubic-bezier(.55, 0, .1, 1);
         }
           
@@ -148,7 +148,7 @@ li{
       }
 
       .toggle-menu > span:nth-child(1){
-          left: 10px;
+          left: 7px;
       }
     }
 
