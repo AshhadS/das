@@ -71,7 +71,6 @@ li{
 
     @include grid-media($mobile){
       left: -2.1px;
-
     }
 
     &.show{
@@ -86,7 +85,7 @@ li{
     @include grid-column(12, $nomargin-grid);
     margin-left: 0;
     height: 44px;
-    transition: all .25s cubic-bezier(.55, 0, .1, 1);
+    transition: all .25s linear;
   
     > li{
       display: none;
@@ -96,7 +95,7 @@ li{
       }
 
       @include grid-media($mobile){
-        position: fixed;
+        // position: fixed;
         display: block;
       }
     }
@@ -150,7 +149,7 @@ li{
 
       .toggle-menu {
         bottom: -50px;
-        
+
         & > span:nth-child(1){
                 left: 7px;
             }
@@ -160,7 +159,6 @@ li{
 
     @include grid-media($mobile){
       width: auto;
-      float: none;
       top: 98px;
       height: auto;
     }

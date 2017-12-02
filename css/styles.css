@@ -81,14 +81,13 @@ li {
     margin-left: 0;
     margin-left: 0;
     height: 44px;
-    transition: all 0.25s cubic-bezier(0.55, 0, 0.1, 1); }
+    transition: all .25s linear; }
     .site-menu #menu > li {
       display: none; }
       .site-menu #menu > li.active {
         display: block; }
       @media only screen and (min-width: 768px) {
         .site-menu #menu > li {
-          position: fixed;
           display: block; } }
     .site-menu #menu .help {
       position: relative; }
@@ -128,7 +127,6 @@ li {
     @media only screen and (min-width: 768px) {
       .site-menu #menu {
         width: auto;
-        float: none;
         top: 98px;
         height: auto; } }
   .site-menu ul {
