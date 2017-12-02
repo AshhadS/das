@@ -19,7 +19,7 @@
 	Variables
 **/
 html {
-  font-family: "Latoregular", sans-serif;
+  font-family: "Latoregular", "Lato", sans-serif;
   font-size: 100%;
   line-height: 1.5em;
   box-sizing: border-box; }
@@ -28,10 +28,11 @@ img {
   max-width: 100%; }
 
 p {
-  font-family: "Latoregular", sans-serif; }
+  font-family: "Latoregular", "Lato", sans-serif; }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Latoblack", sans-serif; }
+  font-family: "Latoblack", "Lato", sans-serif;
+  font-weight: 900; }
 
 a,
 a:hover,
@@ -53,7 +54,7 @@ li {
   color: white; }
   .hero p {
     color: white;
-    font-family: "Latoregular", sans-serif; }
+    font-family: "Latoregular", "Lato", sans-serif; }
 
 /*Menu*/
 .site-menu {
@@ -155,7 +156,8 @@ li {
     font-size: 1.25em;
     position: relative;
     transition: all 5s cubic-bezier(0.55, 0, 0.1, 1);
-    font-family: "Latoblack", sans-serif; }
+    font-family: "Latoblack", "Lato", sans-serif;
+    font-weight: 900; }
     .site-menu a:after {
       width: 0;
       border-bottom: 0.125em solid #00a651;
