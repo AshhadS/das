@@ -18,6 +18,55 @@
 /**
 	Variables
 **/
+.chart {
+  display: table;
+  table-layout: fixed;
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  position: relative;
+  padding-left: 0;
+  margin-top: 3rem; }
+  .chart .axis-y {
+    position: absolute;
+    transform: rotate(-90deg);
+    left: -70px;
+    top: 80px; }
+  .chart .max-line {
+    position: absolute;
+    bottom: 55%;
+    width: 100%;
+    height: 2px;
+    left: -12px;
+    background: #00a651; }
+  .chart li {
+    position: relative;
+    display: table-cell;
+    vertical-align: bottom;
+    height: 200px;
+    width: 60px; }
+  .chart span {
+    margin: 0 1em;
+    display: block;
+    background: #fffc19;
+    animation: draw 1s ease-in-out; }
+    .chart span:before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
+      padding: 5px 1em 0;
+      display: block;
+      text-align: center;
+      content: attr(title);
+      word-wrap: break-word; }
+
+@keyframes draw {
+  0% {
+    height: 0; } }
+
 html {
   font-family: "Latoregular", "Lato", sans-serif;
   font-size: 100%;
@@ -28,11 +77,13 @@ img {
   max-width: 100%; }
 
 p {
-  font-family: "Latoregular", "Lato", sans-serif; }
+  font-family: "Latoregular", "Lato", sans-serif;
+  line-height: 1.5; }
 
 h1, h2, h3, h4, h5 {
   font-family: "Latoblack", "Lato", sans-serif;
-  font-weight: 900; }
+  font-weight: 900;
+  line-height: 1; }
 
 a,
 a:hover,
@@ -45,13 +96,25 @@ li {
 
 .container {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 1rem; }
+  margin: 0 auto; }
+  .container::after {
+    clear: both;
+    content: "";
+    display: block; }
 
 .hero {
-  background: black;
-  color: white; }
+  background: #000;
+  color: #fff; }
+  .hero .content {
+    width: calc(100% - 40px);
+    float: left;
+    margin-left: 20px; }
+    @media only screen and (min-width: 768px) {
+      .hero .content {
+        width: calc(33.33333% - 26.66667px);
+        float: left;
+        margin-left: 20px;
+        margin-left: calc(8.33333% - 21.66667px + 40px); } }
   .hero p {
     color: white;
     font-family: "Latoregular", "Lato", sans-serif; }
@@ -69,7 +132,7 @@ li {
     left: -100px; }
     @media only screen and (min-width: 768px) {
       .site-menu .logo {
-        left: -2.1px; } }
+        left: -3px; } }
     .site-menu .logo.show {
       top: 100px; }
   .site-menu #menu {
@@ -93,12 +156,10 @@ li {
       position: relative; }
     .site-menu #menu .toggle-menu {
       cursor: pointer;
-      position: absolute;
       width: 20px;
       height: 20px;
       width: 100%;
       background: #f3ef42;
-      bottom: -17px;
       text-align: center; }
       .site-menu #menu .toggle-menu > span {
         display: block;
@@ -112,18 +173,19 @@ li {
         .site-menu #menu .toggle-menu > span:nth-child(1) {
           transform: rotate(130deg);
           top: 0px;
-          left: 24px;
+          left: 14px;
           transition: all 0.25s cubic-bezier(0.55, 0, 0.1, 1); }
         .site-menu #menu .toggle-menu > span:nth-child(2) {
-          transform: rotate(-130deg); }
+          transform: rotate(-130deg);
+          right: 9px; }
     .site-menu #menu.menu-collapse {
-      height: 312px; }
+      height: 300px; }
       .site-menu #menu.menu-collapse > li {
         display: block; }
-      .site-menu #menu.menu-collapse .toggle-menu {
-        bottom: -50px; }
-        .site-menu #menu.menu-collapse .toggle-menu > span:nth-child(1) {
-          left: 7px; }
+      .site-menu #menu.menu-collapse .toggle-menu > span:nth-child(1) {
+        left: 7px; }
+      .site-menu #menu.menu-collapse .toggle-menu > span:nth-child(2) {
+        right: 1px; }
     @media only screen and (min-width: 768px) {
       .site-menu #menu {
         width: auto;
@@ -134,7 +196,7 @@ li {
     margin: 0; }
   .site-menu li {
     list-style: none;
-    padding: 0.75rem 0.5rem;
+    padding: 0.75rem 0.72rem;
     text-align: center;
     position: relative; }
     .site-menu li:after {
@@ -189,20 +251,40 @@ li {
 /* Strike Through */
 .strikeout {
   position: relative; }
-
-.strikeout::after {
-  border-bottom: 0.125em solid red;
-  content: "";
-  left: 0;
-  margin-top: calc(0.125em / 2 * -1);
-  position: absolute;
-  right: 0;
-  top: 50%; }
+  .strikeout:after {
+    border-bottom: 0.125em solid black;
+    content: "";
+    left: 0;
+    margin-top: calc(0.125em / 2 * -1);
+    position: absolute;
+    right: 0;
+    top: 50%; }
+  .strikeout.yellow:after {
+    border-bottom: 0.125em solid #fffc19; }
 
 .section.why .content {
   margin-top: 5rem; }
   .section.why .content > h2 {
     margin-bottom: 5rem; }
+  .section.why .content .section-image,
+  .section.why .content .section-text {
+    width: calc(100% - 40px);
+    float: left;
+    margin-left: 20px; }
+  @media only screen and (min-width: 768px) {
+    .section.why .content .section-image {
+      width: calc(25% - 25px);
+      float: left;
+      margin-left: 20px;
+      margin-left: calc(16.66667% - 23.33333px + 40px); } }
+  .section.why .content .section-image img {
+    margin-top: 1em; }
+  @media only screen and (min-width: 768px) {
+    .section.why .content .section-text {
+      width: calc(33.33333% - 26.66667px);
+      float: left;
+      margin-left: 20px;
+      margin-left: calc(4.16667% - 20.83333px + 40px); } }
 
 h2.title {
   color: #00a651;
@@ -216,6 +298,48 @@ h2.title {
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 125% 125%; }
+  .move-bg * {
+    z-index: 5;
+    position: relative; }
+  .move-bg .transparent-box {
+    border: solid 8px #0e6d4a;
+    height: 400px;
+    width: calc(33.33333%);
+    float: left;
+    margin-left: 0;
+    margin-left: calc(8.33333% - 21.66667px + 40px); }
+  .move-bg .solid-text-box {
+    width: calc(50%);
+    float: left;
+    margin-left: 0;
+    height: auto;
+    background: #0e6d4a;
+    height: 416px; }
+    .move-bg .solid-text-box, .move-bg .solid-text-box p, .move-bg .solid-text-box h3 {
+      color: #fff; }
+    .move-bg .solid-text-box .inner {
+      width: calc(75% - 35px);
+      float: left;
+      margin-left: 20px;
+      margin-left: calc(8.33333% - 21.66667px + 40px);
+      padding-top: 3rem; }
+
+.tint-tip:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,7db9e8+100&1+0,0+16,0+16 */
+  background: -moz-linear-gradient(top, black 0%, rgba(20, 30, 37, 0) 40%, rgba(125, 185, 232, 0) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, black 0%, rgba(20, 30, 37, 0) 40%, rgba(125, 185, 232, 0) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, black 0%, rgba(20, 30, 37, 0) 40%, rgba(125, 185, 232, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#007db9e8',GradientType=0 );
+  /* IE6-9 */ }
 
 /*Overeides*/
 .noalign .fp-tableCell {
@@ -232,6 +356,16 @@ h2.title {
 .show {
   display: block; }
 
+.remove-margin {
+  margin: 0; }
+
+.remove-margin-bottom {
+  margin-bottom: 0; }
+
+.remove-margin-top {
+  margin-top: 0; }
+
+/* Responsive */
 .show-mobile {
   display: none; }
   @media only screen and (min-width: 768px) {

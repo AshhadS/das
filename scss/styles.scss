@@ -17,11 +17,13 @@ img {
 
 p{
   font-family: $lato-regular, $lato, sans-serif;
+  line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5{
   font-family: $lato-black, $lato, sans-serif;
   font-weight: 900;
+  line-height: 1;
 
 }
 
@@ -37,15 +39,25 @@ li{
 }
 
 .container {
+    @include grid-container;
     max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 1rem;
+    margin: 0 auto;
+    // @include grid-visual;
 }
 
 .hero{
-	background: black;
-	color: white;
+  background: $black;
+  color: $white;
+
+  .content{
+    @include grid-column(12)
+
+    @include grid-media($mobile){
+      @include grid-column(4)
+      @include grid-push(1)
+    }
+
+  }
 
   p{
     color: white;
@@ -53,6 +65,8 @@ li{
 
   }
 }
+
+
 
 
 
@@ -70,7 +84,7 @@ li{
     left: -100px;
 
     @include grid-media($mobile){
-      left: -2.1px;
+      left: -3px;
     }
 
     &.show{
@@ -107,12 +121,10 @@ li{
 
     .toggle-menu{
       cursor: pointer;
-      position: absolute;
       width: 20px;
       height: 20px;
       width: 100%;
       background: #f3ef42;
-      bottom: -17px;
       text-align: center;
 
       > span{
@@ -129,31 +141,35 @@ li{
         &:nth-child(1){
           transform: rotate(130deg);
           top: 0px;
-          left: 24px;
+          left: 14px;
           transition: all .25s cubic-bezier(.55, 0, .1, 1);
         }
           
         &:nth-child(2){
           transform: rotate(-130deg);
+          right: 9px;
         }
       }
     }
 
 
     &.menu-collapse{
-      height: 312px;
+      height: 300px;
 
       > li{
         display: block;
       }
 
       .toggle-menu {
-        bottom: -50px;
+        // bottom: -50px;
 
         & > span:nth-child(1){
-                left: 7px;
-            }
-          }
+            left: 7px;
+        }
+        & > span:nth-child(2){
+            right: 1px;
+        }
+      }
     }
 
 
@@ -172,7 +188,7 @@ li{
 
   li{
     list-style: none;
-    padding: 0.75rem 0.5rem ;
+    padding: 0.75rem 0.72rem ;
     text-align: center;
     position: relative;
 
@@ -251,16 +267,20 @@ li{
 /* Strike Through */
 .strikeout {
   position: relative;
-}
 
-.strikeout::after {
-  border-bottom: 0.125em solid red;
-  content: "";
-  left: 0;
-  margin-top: calc(0.125em / 2 * -1);
-  position: absolute;
-  right: 0;
-  top: 50%;
+  &:after {
+    border-bottom: 0.125em solid black;
+    content: "";
+    left: 0;
+    margin-top: calc(0.125em / 2 * -1);
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }
+
+  &.yellow:after{
+    border-bottom: 0.125em solid $yellow;
+  }
 }
 
 .section.why .content{
@@ -268,6 +288,29 @@ li{
 
  & > h2{
     margin-bottom: 5rem;
+  }
+
+  .section-image,
+  .section-text{
+    @include grid-column(12);
+  }
+
+  .section-image{
+    @include grid-media($mobile){
+      @include grid-column(3);
+      @include grid-push(2);
+    }
+
+    img{
+      margin-top: 1em;
+    }
+  }
+  
+  .section-text{
+    @include grid-media($mobile){
+      @include grid-column(4);
+      @include grid-push(0.5);
+    }
   }
 }
 
@@ -287,6 +330,52 @@ h2.title{
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-size: 125% 125%;
+  
+  *{
+    z-index:  5 ;
+    position:   relative;
+  }
+
+  .transparent-box{
+    border: solid 8px $green-matte;
+    height: 400px;
+    @include grid-column(4, $nomargin-grid);
+    @include grid-push(1);
+  }
+
+  .solid-text-box{
+    @include grid-column(6, $nomargin-grid);
+    height: auto;
+    background: $green-matte;
+    height: 416px;
+
+    &, p, h3{
+      color: $white;
+      
+    }
+
+    .inner{
+      @include grid-column(9)
+      @include grid-push(1)
+      padding-top: 3rem; 
+
+    }
+  }
+}
+
+.tint-tip:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,7db9e8+100&1+0,0+16,0+16 */
+  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(20,30,37,0) 40%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(20,30,37,0) 40%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(20,30,37,0) 40%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
 }
 
 /*Overeides*/
@@ -306,6 +395,18 @@ h2.title{
 .show{
   display: block;
 }
+
+.remove-margin{
+  margin: 0
+}
+.remove-margin-bottom{
+  margin-bottom: 0
+}
+.remove-margin-top{
+  margin-top: 0
+}
+
+/* Responsive */
 .show-mobile{
     display: none;
 
