@@ -82,13 +82,15 @@ li{
     z-index: 1;
     transition: all .25s cubic-bezier(.55, 0, .1, 1);
     left: -100px;
+    background: #fff;
 
     @include grid-media($mobile){
       left: -3px;
+      padding: 1.55rem;
     }
 
     &.show{
-      top: 100px;
+      top: 138px;
     }
   }
 
@@ -175,7 +177,7 @@ li{
 
     @include grid-media($mobile){
       width: auto;
-      top: 98px;
+      top: 138px;
       height: auto;
     }
   }
@@ -183,12 +185,11 @@ li{
    ul{
     padding: 0;
     margin: 0;
-
   }
 
   li{
     list-style: none;
-    padding: 0.75rem 0.72rem ;
+    padding: 1.55rem 1.86rem;
     text-align: center;
     position: relative;
 
@@ -208,6 +209,7 @@ li{
 
     &.donate {
         background: #00a651;
+        padding: 2.15rem  1.86rem;
 
         a{
           color: white;
@@ -224,6 +226,7 @@ li{
     transition: all 5s cubic-bezier(.55, 0, .1, 1);
     font-family: $lato-black, $lato, sans-serif;
     font-weight: 900;
+    letter-spacing: 1.5px;
 
 
     &:after {
@@ -269,13 +272,13 @@ li{
   position: relative;
 
   &:after {
-    border-bottom: 0.125em solid black;
+    border-bottom: 0.07em solid black;
     content: "";
-    left: 0;
+    left: -4px;
     margin-top: calc(0.125em / 2 * -1);
     position: absolute;
-    right: 0;
-    top: 50%;
+    right: -4px;
+    top: 60%;
   }
 
   &.yellow:after{
@@ -336,18 +339,24 @@ h2.title{
     position:   relative;
   }
 
+  .solid-box-wrapper{
+    margin: 0 auto;
+  }
+
   .transparent-box{
-    border: solid 8px $green-matte;
-    height: 400px;
-    @include grid-column(4, $nomargin-grid);
+    border: solid 13px $green-matte;
+    height: 440px;
+    @include grid-column(5, $nomargin-grid);
     @include grid-push(1);
   }
 
   .solid-text-box{
-    @include grid-column(6, $nomargin-grid);
+    @include grid-column(5, $nomargin-grid);
     height: auto;
     background: $green-matte;
-    height: 416px;
+    height: 440px;
+    border: solid 13px $green-matte;
+
 
     &, p, h3{
       color: $white;
