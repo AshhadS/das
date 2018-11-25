@@ -468,3 +468,33 @@ h2.title {
       border-bottom: 1px solid grey;
       margin-bottom: 1em;
       width: 100%; }
+
+.contact {
+  padding: 70px;
+  margin-left: 0; }
+  @media only screen and (min-width: 992px) {
+    .contact {
+      margin-left: calc(33.33333% - 26.66667px + 40px);
+      padding: 30px; } }
+  @media only screen and (min-width: 768px) {
+    .contact {
+      margin-left: calc(16.66667% - 23.33333px + 40px);
+      padding: 30px; } }
+  .contact h2.title {
+    color: #6a6a6a;
+    text-align: center; }
+    @media only screen and (min-width: 768px) {
+      .contact h2.title {
+        text-align: left; } }
+
+@media only screen and (min-width: 768px) {
+  .contact-form {
+    width: calc(41.66667% - 28.33333px);
+    float: left;
+    margin-left: 20px; } }
+
+.contact-input {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 1em;
+  padding: 0.7em; }
