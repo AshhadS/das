@@ -44,19 +44,37 @@ li{
     margin: 0 auto;
     // @include grid-visual;
 }
+@include grid-media($mobile){
+  .content {
+    padding-left: 135px;
+  }
+}
+
+.section {
+  min-height: 100vh;
+  height: auto !important;
+
+  @include grid-media($mobile) {
+    height: 100vh !important;
+  }
+}
 
 .hero{
   background: $black;
   color: $white;
+  padding-top: 120px;
+
+  @include grid-media($mobile){
+    padding-top: 140px;
+  }
+
 
   .content{
-    @include grid-column(12)
+    @include grid-column(12);
 
     @include grid-media($mobile){
       @include grid-column(4)
-      @include grid-push(1)
     }
-
   }
 
   p{
@@ -72,9 +90,15 @@ li{
 
 /*Menu*/
 .site-menu {
-  /*position: fixed;*/    
+  position: fixed;    
   color: black;
   padding: 0;
+  z-index: 1;
+  width: 100%;
+
+  @include grid-media($mobile){
+    width: auto;
+  } 
 
   .logo{
     position: fixed;
@@ -286,12 +310,8 @@ li{
   }
 }
 
-.section.why .content{
-	margin-top: 5rem;
-
- & > h2{
-    margin-bottom: 5rem;
-  }
+.why{
+  padding-top: 40px;
 
   .section-image,
   .section-text{
@@ -310,6 +330,8 @@ li{
   }
   
   .section-text{
+    min-height: 410px;
+
     @include grid-media($mobile){
       @include grid-column(4);
       @include grid-push(0.5);
@@ -329,11 +351,15 @@ h2.title{
 
 
 .move-bg{
-	background: url('../img/section2_bg.JPG');
-	background-size: cover;
+	background: url('../img/Who_BG.jpg');
+	// background-size: contain;
 	background-repeat: no-repeat;
-	background-size: 125% 125%;
-  
+	// background-size: 125% 125%;
+  background-position: -64px -238.6px;
+  -webkit-transition: background-position 0.01s linear;
+  transition: background-position 0.01s linear;
+  padding-top: 10px; 
+
   *{
     z-index:  5 ;
     position:   relative;
@@ -346,8 +372,12 @@ h2.title{
   .transparent-box{
     border: solid 13px $green-matte;
     height: 440px;
-    @include grid-column(5, $nomargin-grid);
+    @include grid-column(10, $nomargin-grid);
     @include grid-push(1);
+
+    @include grid-media($mobile){
+      @include grid-column(5, $nomargin-grid);
+    }
   }
 
   .solid-text-box{
@@ -430,4 +460,75 @@ h2.title{
     @include grid-media($mobile){
       display: none;
     }
+}
+
+
+.how {
+  background: url('../img/How_BG.jpg');
+  padding: 30px 0;
+}
+
+.promo-card-wrapper {
+  margin: 0 auto;
+  width: 90%;
+
+  .promo-card {
+    @include grid-media($mobile) {
+      @include grid-column(3, $promo-gutter);
+      margin-bottom: 0;
+    }
+
+    padding: 30px;
+    background: $white;
+    border-radius: 10px;
+    min-height: 390px;
+    margin-bottom: 2em;
+
+    .title {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .description {
+      text-align: center;
+      font-size: 1.25em;
+
+      // &.inputs {
+      //   margin-bottom: 35px;
+      // }
+    }
+
+    .promo-button {
+      color: $white;
+      background: $green-matte;
+      width: 100%;
+      border-radius: 8px; 
+
+      a,
+      input {
+        color: $white;
+        text-transform: uppercase;
+        padding: 10px 0;
+        font-size: 1.5em;
+        display: block;
+        text-align: center;
+        font-weight: bold;
+      }
+    }
+
+    .image {
+      text-align: center;
+      border-bottom: 2px solid grey; 
+      padding: 15px 0;
+      img {
+        width: 130px;
+      }
+    }
+
+    .promo-input {
+      border: 0;
+      border-bottom: 1px solid grey;
+      margin-bottom: 1em;
+    }
+  }
 }

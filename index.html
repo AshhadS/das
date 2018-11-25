@@ -13,11 +13,18 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 	<script src="js/jquery.fullpage.min.js"></script>
 	<script>
+
+		var scroll = (window.innerWidth < 767) ? false : true;
 		$(document).ready(function() {
+
 			$('#fullpage').fullpage({
 				// sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
 				anchors: ['help', 'why', 'who', 'what', 'how', 'contact'],
 				menu: '#menu',
+				autoScrolling: scroll,
+				verticalCentered: false,
+				scrollBar: true,
+				fitToSection: false,
 
 				afterLoad: function( anchorLink, index){
 					if(index == 1){
@@ -73,7 +80,7 @@
 			</div>
 		</div>
     </div>
-    <div class="section why noalign">
+    <div class="section why noalign fp-auto-height-responsive">
 		<div class="container">
 			<div class="content">
 				<h2 class="title"><span class="strikeout">Why</span> you should donate</h2>
@@ -134,17 +141,47 @@
 			</div>				
 		</div>
     </div>
-    <div class="section">
-       <div class="container">
-			<div class="content">
-				<div class="row">
-					<div class="col-md-6">
-						<h2>Help the ones in need</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente optio recusandae, totam distinctio expedita laborum maiores odit fugiat! Cum assumenda cumque incidunt, a aliquid corrupti odit reprehenderit dolor nihil dolore!</p>
+    <div class="section how noalign">
+    	<div class="content container">
+	    	<h2 class="title"><span class="strikeout yellow">How</span> you could support</h2>
+			<div class="promo-card-wrapper">
+				<div class="promo-card">
+					<div class="image"><img src="img/Donation.png" alt="Donation"></div>
+					<div class="copy">
+						<h3 class="title">Donate</h3>
+						<div class="description"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente optio recusandae, totam distinctio expedita laborum maiores</p></div>
+						<div class="promo-button">
+							<a href="/donate">Donate</a>
+						</div>
 					</div>
 				</div>
-			</div>				
-		</div>
+				<div class="promo-card">
+					<div class="image"><img src="img/Awareness.png" alt="Awareness"></div>
+					<div class="copy">
+						<h3 class="title">Raise Awareness</h3>
+						<div class="description"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente optio recusandae, totam distinctio expedita laborum maiores</p></div>
+						<div class="promo-button">
+							<a href="/donate">Share</a>
+						</div>
+					</div>
+				</div>
+				<div class="promo-card">
+					<div class="image"><img src="img/Donor.png" alt="Donor"></div>
+					<div class="copy">
+						<div class="description inputs">
+							<p>Connect us with a possible donor</p>
+							<input type="email" class="promo-input" placeholder="*donor@email.com">
+							<input type="text" class="promo-input" placeholder="+94771234567">
+							<input type="text" class="promo-input" placeholder="donor name">
+						</div>
+
+						<div class="promo-button">
+							<a href="/donate">Submit</a>
+						</div>
+					</div>
+				</div>
+			</div>
+    	</div>
     </div>
     <div class="section">
        <div class="container">
