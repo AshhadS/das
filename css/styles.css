@@ -150,14 +150,13 @@ li {
   .site-menu .logo {
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: -1;
     transition: all 0.25s cubic-bezier(0.55, 0, 0.1, 1);
     left: -100px;
     background: #fff; }
     @media only screen and (min-width: 768px) {
       .site-menu .logo {
-        left: -3px;
-        padding: 1.55rem; } }
+        left: -3px; } }
     .site-menu .logo.show {
       top: 138px; }
   .site-menu #menu {
@@ -233,6 +232,8 @@ li {
       left: 35px;
       right: 35px;
       height: 1px; }
+    .site-menu li:first-child {
+      padding: 0; }
     .site-menu li.no-seperator:after {
       content: none; }
     .site-menu li.donate {
@@ -273,7 +274,7 @@ li {
       transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1); }
 
 .logo img {
-  max-width: 97.5px;
+  max-width: 138.5px;
   margin: 0; }
 
 /* Strike Through */

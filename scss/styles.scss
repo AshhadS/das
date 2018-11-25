@@ -108,14 +108,14 @@ li{
   .logo{
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: -1;
     transition: all .25s cubic-bezier(.55, 0, .1, 1);
     left: -100px;
     background: #fff;
 
     @include grid-media($mobile){
       left: -3px;
-      padding: 1.55rem;
+      // padding: 1.55rem;
     }
 
     &.show{
@@ -233,6 +233,10 @@ li{
       height: 1px;
     }
 
+    &:first-child {
+      padding: 0;
+    }
+
     &.no-seperator:after {
       content: none;
     }
@@ -292,7 +296,7 @@ li{
 }
 
 .logo img {
-    max-width: 97.5px;
+    max-width: 138.5px;
     margin: 0;
 	
 }
