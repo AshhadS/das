@@ -141,19 +141,23 @@ li {
   padding: 0;
   z-index: 1;
   width: 100%; }
+  @media only screen and (min-width: 768px) {
+    .site-menu {
+      width: calc(8.33333%);
+      float: left;
+      margin-left: 0; } }
   .site-menu .logo {
+    top: 0;
     z-index: -1;
-    transition: all 0.25s cubic-bezier(0.55, 0, 0.1, 1);
-    background: #fff; }
-    .site-menu .logo.show {
+    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1); }
+    .site-menu .logo a {
+      display: block;
+      padding: 8px; }
+    .site-menu .logo.hide {
       top: 138px; }
   .site-menu #menu {
     position: relative;
     z-index: 1;
-    background: white;
-    width: calc(100%);
-    float: left;
-    margin-left: 0;
     margin-left: 0;
     height: 44px;
     transition: all .25s linear; }
@@ -200,18 +204,14 @@ li {
         right: 1px; }
     @media only screen and (min-width: 768px) {
       .site-menu #menu {
-        width: calc(8.33333%);
-        float: left;
-        margin-left: 0;
         float: none;
-        top: 138px;
         height: auto; } }
   .site-menu ul {
     padding: 0;
     margin: 0; }
   .site-menu li {
     list-style: none;
-    padding: 1.55rem 0;
+    padding: 1.15rem 0;
     text-align: center;
     position: relative;
     background: white; }
@@ -441,7 +441,7 @@ h2.title {
       text-transform: uppercase; }
     .promo-card-wrapper .promo-card .description {
       text-align: center;
-      font-size: 1.25em; }
+      font-size: 1em; }
     .promo-card-wrapper .promo-card .promo-button {
       color: #fff;
       background: #0e6d4a;

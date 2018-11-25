@@ -98,24 +98,28 @@ li{
   z-index: 1;
   width: 100%;
 
-  // @include grid-media($mobile){
-  //   width: auto;
-  // } 
+  @include grid-media($mobile){
+    @include grid-column(1, $nomargin-grid)
+  } 
 
   .logo{
     // position: fixed;
-    // top: 0;
+    top: 0;
     z-index: -1;
-    transition: all .25s cubic-bezier(.55, 0, .1, 1);
+    transition: all .5s cubic-bezier(.55, 0, .1, 1);
     // left: -100px;
-    background: #fff;
 
     // @include grid-media($mobile){
       // left: -3px;
       // padding: 1.55rem;
     // }
+    // 
+    a {
+      display: block;
+      padding: 8px;
+    }
 
-    &.show{
+    &.hide{
       top: 138px;
     }
   }
@@ -123,8 +127,7 @@ li{
   #menu{
     position: relative;
     z-index: 1;
-    background: white;
-    @include grid-column(12, $nomargin-grid);
+    // @include grid-column(12, $nomargin-grid);
     margin-left: 0;
     height: 44px;
     transition: all .25s linear;
@@ -202,9 +205,9 @@ li{
 
 
     @include grid-media($mobile){
-      @include grid-column(1, $nomargin-grid)
+      // @include grid-column(1, $nomargin-grid)
       float: none;
-      top: 138px;
+      // top: 138px;
       height: auto;
     }
   }
@@ -216,7 +219,7 @@ li{
 
   li{
     list-style: none;
-    padding: 1.55rem 0;
+    padding: 1.15rem 0;
     text-align: center;
     position: relative;
     background: white;
@@ -514,7 +517,7 @@ h2.title{
 
     .description {
       text-align: center;
-      font-size: 1.25em;
+      font-size: 1em;
 
       // &.inputs {
       //   margin-bottom: 35px;
