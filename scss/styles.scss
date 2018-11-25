@@ -10,6 +10,11 @@ html{
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 img {
 	max-width: 100%; 
 }
@@ -216,6 +221,7 @@ li{
     padding: 1.55rem 1.86rem;
     text-align: center;
     position: relative;
+    background: white;
 
     &:after {
       content: "";
@@ -311,7 +317,7 @@ li{
 }
 
 .why{
-  padding-top: 40px;
+  padding: 40px 0;
 
   .section-image,
   .section-text{
@@ -351,7 +357,7 @@ h2.title{
 
 
 .move-bg{
-	background: url('../img/Who_BG.jpg');
+	background: url('../img/Who_BG.jpg') grey;
 	// background-size: contain;
 	background-repeat: no-repeat;
 	// background-size: 125% 125%;
@@ -359,33 +365,41 @@ h2.title{
   -webkit-transition: background-position 0.01s linear;
   transition: background-position 0.01s linear;
   padding-top: 10px; 
+  padding-bottom: 40px; 
 
-  *{
-    z-index:  5 ;
-    position:   relative;
-  }
+  
 
   .solid-box-wrapper{
     margin: 0 auto;
+    float: left;
+    width: 100%;
   }
 
   .transparent-box{
     border: solid 13px $green-matte;
     height: 440px;
-    @include grid-column(10, $nomargin-grid);
-    @include grid-push(1);
+    @include grid-column(9, $nomargin-grid);
+    @include grid-push(0.5);
 
     @include grid-media($mobile){
       @include grid-column(5, $nomargin-grid);
+      @include grid-push(1);
     }
   }
 
   .solid-text-box{
-    @include grid-column(5, $nomargin-grid);
+    @include grid-column(9, $nomargin-grid);
+    @include grid-push(0.5);
+
     height: auto;
     background: $green-matte;
     height: 440px;
     border: solid 13px $green-matte;
+
+    @include grid-media($mobile){
+      @include grid-column(5, $nomargin-grid);
+    }
+
 
 
     &, p, h3{
@@ -402,19 +416,26 @@ h2.title{
   }
 }
 
-.tint-tip:after{
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.tint-tip {
+  *{
+    z-index:  0 ;
+    position:   relative;
+  }
 
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,7db9e8+100&1+0,0+16,0+16 */
-  background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(20,30,37,0) 40%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(20,30,37,0) 40%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(20,30,37,0) 40%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+  &:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,7db9e8+100&1+0,0+16,0+16 */
+    background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(20,30,37,0) 40%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(20,30,37,0) 40%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(20,30,37,0) 40%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+  }
 }
 
 /*Overeides*/
@@ -527,8 +548,10 @@ h2.title{
 
     .promo-input {
       border: 0;
+      outline: 0;
       border-bottom: 1px solid grey;
       margin-bottom: 1em;
+      width: 100%;
     }
   }
 }

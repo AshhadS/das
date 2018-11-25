@@ -73,6 +73,10 @@ html {
   line-height: 1.5em;
   box-sizing: border-box; }
 
+body {
+  margin: 0;
+  padding: 0; }
+
 img {
   max-width: 100%; }
 
@@ -219,7 +223,8 @@ li {
     list-style: none;
     padding: 1.55rem 1.86rem;
     text-align: center;
-    position: relative; }
+    position: relative;
+    background: white; }
     .site-menu li:after {
       content: "";
       position: absolute;
@@ -286,7 +291,7 @@ li {
     border-bottom: 0.125em solid #fffc19; }
 
 .why {
-  padding-top: 40px; }
+  padding: 40px 0; }
   .why .section-image,
   .why .section-text {
     width: calc(100% - 40px);
@@ -317,37 +322,44 @@ h2.title {
     text-align: left; }
 
 .move-bg {
-  background: url("../img/Who_BG.jpg");
+  background: url("../img/Who_BG.jpg") grey;
   background-repeat: no-repeat;
   background-position: -64px -238.6px;
   -webkit-transition: background-position 0.01s linear;
   transition: background-position 0.01s linear;
-  padding-top: 10px; }
-  .move-bg * {
-    z-index: 5;
-    position: relative; }
+  padding-top: 10px;
+  padding-bottom: 40px; }
   .move-bg .solid-box-wrapper {
-    margin: 0 auto; }
+    margin: 0 auto;
+    float: left;
+    width: 100%; }
   .move-bg .transparent-box {
     border: solid 13px #0e6d4a;
     height: 440px;
-    width: calc(83.33333%);
+    width: calc(75%);
     float: left;
     margin-left: 0;
-    margin-left: calc(8.33333% - 21.66667px + 40px); }
+    margin-left: calc(4.16667% - 20.83333px + 40px); }
     @media only screen and (min-width: 768px) {
       .move-bg .transparent-box {
         width: calc(41.66667%);
         float: left;
-        margin-left: 0; } }
+        margin-left: 0;
+        margin-left: calc(8.33333% - 21.66667px + 40px); } }
   .move-bg .solid-text-box {
-    width: calc(41.66667%);
+    width: calc(75%);
     float: left;
     margin-left: 0;
+    margin-left: calc(4.16667% - 20.83333px + 40px);
     height: auto;
     background: #0e6d4a;
     height: 440px;
     border: solid 13px #0e6d4a; }
+    @media only screen and (min-width: 768px) {
+      .move-bg .solid-text-box {
+        width: calc(41.66667%);
+        float: left;
+        margin-left: 0; } }
     .move-bg .solid-text-box, .move-bg .solid-text-box p, .move-bg .solid-text-box h3 {
       color: #fff; }
     .move-bg .solid-text-box .inner {
@@ -356,6 +368,10 @@ h2.title {
       margin-left: 20px;
       margin-left: calc(8.33333% - 21.66667px + 40px);
       padding-top: 3rem; }
+
+.tint-tip * {
+  z-index: 0;
+  position: relative; }
 
 .tint-tip:after {
   content: "";
@@ -458,5 +474,7 @@ h2.title {
         width: 130px; }
     .promo-card-wrapper .promo-card .promo-input {
       border: 0;
+      outline: 0;
       border-bottom: 1px solid grey;
-      margin-bottom: 1em; }
+      margin-bottom: 1em;
+      width: 100%; }
