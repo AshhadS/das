@@ -49,11 +49,11 @@ li{
     margin: 0 auto;
     // @include grid-visual;
 }
-@include grid-media($mobile){
-  .content {
-    padding-left: 135px;
-  }
-}
+// @include grid-media($mobile){
+  // .content {
+  //   padding-left: 135px;
+  // }
+// }
 
 .section {
   min-height: 100vh;
@@ -79,6 +79,7 @@ li{
 
     @include grid-media($mobile){
       @include grid-column(4)
+      @include grid-push(1.5);
     }
   }
 
@@ -89,10 +90,6 @@ li{
   }
 }
 
-
-
-
-
 /*Menu*/
 .site-menu {
   position: fixed;    
@@ -101,9 +98,9 @@ li{
   z-index: 1;
   width: 100%;
 
-  @include grid-media($mobile){
-    width: auto;
-  } 
+  // @include grid-media($mobile){
+  //   width: auto;
+  // } 
 
   .logo{
     position: fixed;
@@ -205,7 +202,8 @@ li{
 
 
     @include grid-media($mobile){
-      width: auto;
+      @include grid-column(1, $nomargin-grid)
+      float: none;
       top: 138px;
       height: auto;
     }
@@ -218,7 +216,7 @@ li{
 
   li{
     list-style: none;
-    padding: 1.55rem 1.86rem;
+    padding: 1.55rem 0;
     text-align: center;
     position: relative;
     background: white;
@@ -243,7 +241,7 @@ li{
 
     &.donate {
         background: #00a651;
-        padding: 2.15rem  1.86rem;
+        // padding: 2.15rem  1.86rem;
 
         a{
           color: white;
@@ -255,7 +253,7 @@ li{
   a{
     color: black;
     text-transform: uppercase;
-    font-size: 1.25em;
+    font-size: 1em;
     position: relative;
     transition: all 5s cubic-bezier(.55, 0, .1, 1);
     font-family: $lato-black, $lato, sans-serif;

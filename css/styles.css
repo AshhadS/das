@@ -106,10 +106,6 @@ li {
     content: "";
     display: block; }
 
-@media only screen and (min-width: 768px) {
-  .content {
-    padding-left: 135px; } }
-
 .section {
   min-height: 100vh;
   height: auto !important; }
@@ -132,7 +128,8 @@ li {
       .hero .content {
         width: calc(33.33333% - 26.66667px);
         float: left;
-        margin-left: 20px; } }
+        margin-left: 20px;
+        margin-left: calc(12.5% - 22.5px + 40px); } }
   .hero p {
     color: white;
     font-family: "Latoregular", "Lato", sans-serif; }
@@ -144,9 +141,6 @@ li {
   padding: 0;
   z-index: 1;
   width: 100%; }
-  @media only screen and (min-width: 768px) {
-    .site-menu {
-      width: auto; } }
   .site-menu .logo {
     position: fixed;
     top: 0;
@@ -212,7 +206,10 @@ li {
         right: 1px; }
     @media only screen and (min-width: 768px) {
       .site-menu #menu {
-        width: auto;
+        width: calc(8.33333%);
+        float: left;
+        margin-left: 0;
+        float: none;
         top: 138px;
         height: auto; } }
   .site-menu ul {
@@ -220,7 +217,7 @@ li {
     margin: 0; }
   .site-menu li {
     list-style: none;
-    padding: 1.55rem 1.86rem;
+    padding: 1.55rem 0;
     text-align: center;
     position: relative;
     background: white; }
@@ -237,14 +234,13 @@ li {
     .site-menu li.no-seperator:after {
       content: none; }
     .site-menu li.donate {
-      background: #00a651;
-      padding: 2.15rem  1.86rem; }
+      background: #00a651; }
       .site-menu li.donate a {
         color: white; }
   .site-menu a {
     color: black;
     text-transform: uppercase;
-    font-size: 1.25em;
+    font-size: 1em;
     position: relative;
     transition: all 5s cubic-bezier(0.55, 0, 0.1, 1);
     font-family: "Latoblack", "Lato", sans-serif;
