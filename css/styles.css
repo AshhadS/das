@@ -142,15 +142,9 @@ li {
   z-index: 1;
   width: 100%; }
   .site-menu .logo {
-    position: fixed;
-    top: 0;
     z-index: -1;
     transition: all 0.25s cubic-bezier(0.55, 0, 0.1, 1);
-    left: -100px;
     background: #fff; }
-    @media only screen and (min-width: 768px) {
-      .site-menu .logo {
-        left: -3px; } }
     .site-menu .logo.show {
       top: 138px; }
   .site-menu #menu {
@@ -270,7 +264,6 @@ li {
       transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1); }
 
 .logo img {
-  max-width: 138.5px;
   margin: 0; }
 
 /* Strike Through */
