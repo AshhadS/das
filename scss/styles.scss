@@ -586,38 +586,83 @@ h2.title{
 }
 
 .contact-form{
-  @include grid-media($mobile){
-    @include grid-column(5)
-  }
-
   margin-left: 0;
 
   @include grid-media($tab) {
+    @include grid-column(12);
     @include grid-push(3);
   }
 
   @include grid-media($mobile) {
+    @include grid-column(5);
     @include grid-push(2);
   }
 }
 
 .contact-input{
+  box-sizing: border-box;
   width: 100%;
-  height: 40px;
+  height: 30px;
   margin-bottom: 2em;
   border: 1px solid $grey-lighter;
-  padding: .8em;
+  padding: 1em;
   font-size: 1.1em;
   outline-color: $grey-lighter;
 
   &.contact-textarea{
     height: 300px;
+    resize: none;
   }
 }
 
 .submit{
+  font-size: 1.1em;
   width: 100%;
-  height: 40px;
+  height: 50px;
   color: $white;
   background: $green-matte;
+  border-radius: 10px;
+  border: none;
+  box-sizing: border-box;
+  transition: all 500ms ease;
+}
+
+.submit:hover{
+  background: $green;
+  transition: all 2s ease;
+}
+
+.contact-details{
+
+  font-size: 1.1em;
+  color: $grey-light;
+  float: none;
+  text-align: left;
+  padding-top: 3em;
+
+  @include grid-media($mobile) {
+    @include grid-push(1);
+    float: left;
+    padding-top: 8.4em;
+  }
+}
+
+.footer{
+  position:absolute;
+  left: 0;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  background: $green-matte;
+  text-align: center;
+
+  @include grid-media($mobile){
+        text-align: right;
+      }
+}
+
+.footer-text{
+  padding: 2em 1em 0 0;
+  font-size: .8em;
+  color: $white;
 }
