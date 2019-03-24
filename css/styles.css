@@ -314,7 +314,8 @@ h2.title {
 .move-bg {
   background: url("../img/Who_BG.jpg") grey;
   background-repeat: no-repeat;
-  background-position: -64px -238.6px;
+  background-size: 120% 145%;
+  background-position: -39.5px -434.4px;
   -webkit-transition: background-position 0.01s linear;
   transition: background-position 0.01s linear;
   padding-top: 10px;
@@ -422,8 +423,7 @@ h2.title {
   padding: 30px 0; }
 
 .promo-card-wrapper {
-  margin: 0 auto;
-  width: 90%; }
+  margin: 0 auto; }
   .promo-card-wrapper .promo-card {
     padding: 30px;
     background: #fff;
@@ -436,12 +436,17 @@ h2.title {
         float: left;
         margin-left: 45px;
         margin-bottom: 0; } }
+    .promo-card-wrapper .promo-card:first-child {
+      margin-left: 0;
+      margin-left: calc(8.33333% - 21.66667px + 40px); }
     .promo-card-wrapper .promo-card .title {
       text-align: center;
       text-transform: uppercase; }
     .promo-card-wrapper .promo-card .description {
       text-align: center;
       font-size: 1em; }
+      .promo-card-wrapper .promo-card .description.inputs {
+        margin-bottom: 1.8em; }
     .promo-card-wrapper .promo-card .promo-button {
       color: #fff;
       background: #0e6d4a;

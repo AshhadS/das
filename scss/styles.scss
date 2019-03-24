@@ -365,8 +365,8 @@ h2.title{
 	background: url('../img/Who_BG.jpg') grey;
 	// background-size: contain;
 	background-repeat: no-repeat;
-	// background-size: 125% 125%;
-  background-position: -64px -238.6px;
+	background-size: 120% 145%;
+  background-position: -39.5px -434.4px;
   -webkit-transition: background-position 0.01s linear;
   transition: background-position 0.01s linear;
   padding-top: 10px; 
@@ -496,12 +496,16 @@ h2.title{
 
 .promo-card-wrapper {
   margin: 0 auto;
-  width: 90%;
 
   .promo-card {
     @include grid-media($mobile) {
       @include grid-column(3, $promo-gutter);
       margin-bottom: 0;
+    }
+
+    &:first-child {
+      margin-left: 0;
+      @include grid-push(1);
     }
 
     padding: 30px;
@@ -518,6 +522,10 @@ h2.title{
     .description {
       text-align: center;
       font-size: 1em;
+
+      &.inputs {
+        margin-bottom: 1.8em;
+      }
 
       // &.inputs {
       //   margin-bottom: 35px;
